@@ -24,7 +24,7 @@ app.get("/api/health", (req, res) => {
 
 app.post("/api/contact", async (req, res) => {
   try {
-    const { clientType, name, email, organizationName, serviceRequested, budget, message, webhookUrl } = req.body;
+    const { clientType, name, email, organizationName, serviceRequested, budget, message } = req.body;
     
     if (!name || typeof name !== "string" || name.trim().length === 0 ||
         !email || typeof email !== "string" || !email.includes("@") ||
@@ -45,28 +45,13 @@ app.post("/api/contact", async (req, res) => {
       status: "New"
     };
 
-    // Save locally securely
+    // Save locally securely (private local storage, no external data leakage)
     const fileData = fs.readFileSync(CONTACTS_FILE, "utf-8");
     const contacts = JSON.parse(fileData);
     contacts.unshift(sanitizedContact);
     fs.writeFileSync(CONTACTS_FILE, JSON.stringify(contacts, null, 2), { mode: 0o600 });
 
-    // Forward to Google Sheet Webhook URL (from environment or request payload)
-    const targetWebhook = webhookUrl || process.env.GOOGLE_SHEET_WEBHOOK_URL;
-    if (targetWebhook && typeof targetWebhook === "string" && targetWebhook.startsWith("https://")) {
-      try {
-        await fetch(targetWebhook, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(sanitizedContact),
-          redirect: "follow"
-        });
-      } catch (webhookErr) {
-        console.error("Google Sheet webhook forwarding error:", webhookErr);
-      }
-    }
-
-    res.json({ success: true, message: "Inquiry successfully submitted and logged." });
+    res.json({ success: true, message: "Inquiry successfully submitted." });
   } catch (err) {
     res.status(500).json({ success: false, error: "Internal server error." });
   }
