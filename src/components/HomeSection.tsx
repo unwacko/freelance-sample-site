@@ -48,18 +48,38 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-2">
-            <div className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+            <a
+              href="https://www.mercor.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 hover:border-blue-500 hover:text-blue-600 transition-colors"
+            >
               Mercor
-            </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+            </a>
+            <a
+              href="https://www.welocalize.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 hover:border-blue-500 hover:text-blue-600 transition-colors"
+            >
               Welocalize
-            </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+            </a>
+            <a
+              href="https://www.oneforma.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 hover:border-blue-500 hover:text-blue-600 transition-colors"
+            >
               OneForma
-            </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+            </a>
+            <a
+              href="https://outlier.ai/?utm_source=google&utm_medium=paid&utm_term=entry%20level%20marketing%20jobs%20near%20me&language=EN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 hover:border-blue-500 hover:text-blue-600 transition-colors"
+            >
               Outlier
-            </div>
+            </a>
             <div className="p-3.5 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#262626] text-center font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 col-span-2 sm:col-span-1">
               Independent
             </div>
